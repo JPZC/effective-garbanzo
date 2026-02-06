@@ -13,6 +13,9 @@ def main() -> None:
     while True:
         try:
             text = listener.listen()
+        except RuntimeError as exc:
+            print(str(exc))
+            break
         except KeyboardInterrupt:
             print("Saliendo...")
             break

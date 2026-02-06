@@ -130,3 +130,16 @@ Se toma una captura de pantalla y se envía a la **Hugging Face Inference API** 
 ## Notas de seguridad
 
 Este proyecto automatiza acciones del escritorio. Revísalo y ajústalo a tu entorno antes de usarlo en un equipo con información sensible.
+
+## Troubleshooting
+
+**Error `ModuleNotFoundError: No module named 'distutils'` en Python 3.12**  
+SpeechRecognition puede requerir `distutils` vía PyAudio. Soluciones:
+
+- Instala `setuptools`:
+
+```bash
+pip install setuptools
+```
+
+- O usa Python 3.11 (recomendado para máxima compatibilidad con PyAudio).
