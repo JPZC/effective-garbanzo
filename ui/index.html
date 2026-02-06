@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Control visual con voz</title>
+    <link rel="stylesheet" href="/ui/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <div>
+            <p class="brand-title">Asistente visual</p>
+            <p class="brand-subtitle">Controla Windows con voz + visión</p>
+          </div>
+        </div>
+        <nav class="menu">
+          <button class="menu-item active">Panel</button>
+          <button class="menu-item">Flujos</button>
+          <button class="menu-item">Plantillas</button>
+          <button class="menu-item">Seguridad</button>
+          <button class="menu-item">Ajustes</button>
+        </nav>
+        <div class="status-card">
+          <p class="label">Estado del motor</p>
+          <div class="status-pill" id="engine-status">Listo</div>
+          <div class="status-row">
+            <span>IA Vision</span>
+            <span class="status-on">Activo</span>
+          </div>
+          <div class="status-row">
+            <span>Captura</span>
+            <span class="status-on">Permisos OK</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h1>Panel de control</h1>
+            <p>Diseña acciones visuales y ejecuta comandos por voz.</p>
+          </div>
+          <div class="topbar-actions">
+            <button class="secondary" id="start-listen">Escuchar</button>
+            <button class="primary" id="stop-listen">Detener</button>
+          </div>
+        </header>
+
+        <section class="grid">
+          <div class="card live-preview">
+            <div class="card-header">
+              <h2>Vista en vivo</h2>
+              <span class="pill">Beta</span>
+            </div>
+            <div class="preview">
+              <div class="preview-overlay">
+                <p>Conecta la captura para ver tu escritorio aquí.</p>
+                <button class="secondary" id="refresh-preview">Actualizar captura</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card command-card">
+            <div class="card-header">
+              <h2>Comando rápido</h2>
+              <span class="pill">Voz/Texto</span>
+            </div>
+            <div class="command-input">
+              <input
+                id="command-input"
+                type="text"
+                placeholder='Ej: "haz click en objeto icono de chrome"'
+              />
+              <button class="primary" id="send-command">Ejecutar</button>
+            </div>
+            <div class="history" id="history">
+              <p class="history-title">Historial</p>
+              <div class="history-item">Sin comandos aún.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card flow-card">
+            <div class="card-header">
+              <h2>Constructor visual</h2>
+              <span class="pill">Drag & Drop</span>
+            </div>
+            <div class="flow">
+              <div class="flow-step">
+                <span class="step-number">1</span>
+                <div>
+                  <h3>Selecciona elemento</h3>
+                  <p>Marca visualmente un botón o archivo en pantalla.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="step-number">2</span>
+                <div>
+                  <h3>Define la acción</h3>
+                  <p>Clic, doble clic, escribir texto o abrir ruta.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="step-number">3</span>
+                <div>
+                  <h3>Guarda y ejecuta</h3>
+                  <p>Crea flujos reutilizables con voz o un botón.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card tips-card">
+            <div class="card-header">
+              <h2>Tips UX</h2>
+              <span class="pill">Mejores prácticas</span>
+            </div>
+            <ul class="tips">
+              <li>Usa comandos cortos y claros para mejorar la detección.</li>
+              <li>Agrupa acciones en flujos para tareas repetitivas.</li>
+              <li>Activa la vista previa para confirmar antes de hacer clic.</li>
+              <li>Define zonas seguras para evitar clics accidentales.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/ui/app.js"></script>
+  </body>
+</html>
